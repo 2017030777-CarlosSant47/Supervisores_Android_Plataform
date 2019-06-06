@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="50dp"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.carlossant47.testingfunctions.MenuActivity"
+    tools:showIn="@layout/app_bar_menu">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:id="@+id/secList"
+            android:orientation="vertical"
+            tools:context=".MainActivity">
+            <include
+                layout="@layout/content_list_supervision"/>
+        </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linSupervicion"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:id="@+id/linSupervicionActual"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                style="@style/InfoElements"
+                android:drawableStart="@drawable/school"
+                android:clickable="false"
+                android:id="@+id/lbInstitucion"
+                android:drawableTint="@color/colorPrimary"
+                android:text="Nombre Institucion" />
+            <TextView
+                style="@style/InfoElements"
+                android:drawableStart="@drawable/ic_place_black_24dp"
+                android:clickable="false"
+                android:drawableTint="@color/colorPrimary"
+                android:id="@+id/lbDomicilio"
+                android:text="Domicilio" />
+            <TextView
+                style="@style/InfoElements"
+                android:drawableStart="@drawable/calendar"
+                android:clickable="false"
+                android:drawableTint="@color/colorPrimary"
+                android:id="@+id/lbFecha"
+                android:text="Fecha" />
+            <TextView
+                style="@style/InfoElements"
+                android:drawableStart="@drawable/zona"
+                android:clickable="false"
+                android:drawableTint="@color/colorPrimary"
+                android:id="@+id/lbZona"
+                android:text="Fecha" />
+            <Button
+                style="@style/ButtonAll"
+                android:id="@+id/btnStart"
+                android:layout_width="wrap_content"
+                android:layout_gravity="right"
+                android:text="@string/iniciar_supervision"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="visible"
+            android:id="@+id/linNoSupervicion"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="250dp"
+                android:layout_gravity="center"
+                android:src="@drawable/mailbox"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_marginLeft="20dp"
+                android:textSize="17sp"
+                android:text="@string/no_supervicion_actual"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="20dp"
+                android:gravity="center"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/vNoSup"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:layout_width="150px"
+            android:layout_height="150px"
+            android:tint="#878787"
+            android:layout_gravity="center"
+            android:src="@drawable/empy"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_marginLeft="20dp"
+            android:textSize="17sp"
+            android:text="@string/no_supervision"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="20dp"
+            android:gravity="center"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+
+    </RelativeLayout>

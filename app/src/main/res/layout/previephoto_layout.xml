@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+
+        android:id="@+id/iVview"
+        android:layout_width="match_parent"
+        android:layout_height="480dp"
+        android:maxHeight="480dp"/>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_alignBottom="@+id/iVview"
+        android:layout_centerHorizontal="true">
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/btndelete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:clickable="true"
+                android:text="Eliminar"
+                android:textColor="@color/colorAccent" />
+
+            <Button
+                android:id="@+id/btnsavephoto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:clickable="true"
+                android:text="Guardar"
+                android:textColor="@color/colorAccent" />
+        </TableRow>
+    </TableLayout>
+</RelativeLayout>

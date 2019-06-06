@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+
+    android:layout_height="wrap_content">
+    <ScrollView
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:background="@color/colorPrimary"
+                android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_marginTop="20dp"
+                        android:gravity="center"
+                        android:textSize="17dp"
+                        android:text="Plan de Estudios y Modalidad"
+                        android:layout_width="match_parent"
+                        android:textColor="#fff"
+                        android:textStyle="bold"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        />
+            </LinearLayout>
+            <TableLayout
+                android:layout_width="match_parent"
+                android:stretchColumns="*"
+                android:layout_height="wrap_content">
+                <TableRow>
+                    <EditText
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:id="@+id/txtNomDirec"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginRight="24dp"
+                        android:hint="Nombre Director"
+
+                        android:inputType="textPersonName"/>
+                    <Spinner
+                        android:id="@+id/cmbDocuments1"
+                        android:layout_weight="1"
+                        android:entries="@array/cmbDocumentos"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+
+                    </Spinner>
+
+                    <EditText
+                        android:hint="Numero de credencia"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:id="@+id/txtnumcrend1"
+                        android:layout_height="wrap_content"
+                        />
+                </TableRow>
+
+                <TableRow>
+
+                    <EditText
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:id="@+id/txtNomT1"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginRight="24dp"
+                        android:hint="Testigo 1"
+                        android:inputType="textPersonName"/>
+                    <Spinner
+                        android:id="@+id/cmbDocuments2"
+                        android:layout_weight="1"
+                        android:entries="@array/cmbDocumentos"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+
+                    </Spinner>
+
+                    <EditText
+                        android:hint="Numero de credencia"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:id="@+id/txtnumcrend2"
+                        android:layout_height="wrap_content"
+                        />
+                </TableRow>
+                <TableRow>
+                    <EditText
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:id="@+id/txtNomT2"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginRight="24dp"
+                        android:hint="Testigo 2"
+                        android:inputType="textPersonName"/>
+                    <Spinner
+                        android:layout_weight="1"
+                        android:id="@+id/cmbDocuments3"
+
+                        android:layout_width="0dp"
+                        android:entries="@array/cmbDocumentos"
+                        android:layout_height="wrap_content">
+
+                    </Spinner>
+
+                    <EditText
+                        android:id="@+id/txtnumcrend3"
+                        android:hint="Numero de credencia"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        />
+                </TableRow>
+
+            </TableLayout>
+
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp"
+                android:background="@color/colorPrimary"
+                android:textColor="#fff"
+                android:id="@+id/btncamera"
+                android:visibility="gone"
+                android:text="@string/tomas_fotos_de_documentos"/>
+            <View
+                android:background="#515050"
+                android:layout_width = "fill_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:layout_centerVertical ="true"
+                android:layout_alignParentTop="true"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="24dp"
+                android:textSize="17dp"
+                android:text="@string/programa"
+                android:textColor="#000"
+                />
+
+
+            <RadioGroup
+                android:id="@+id/RG_Programa"
+                android:orientation="horizontal"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <RadioButton
+                    android:id="@+id/RB_Trimestral"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/trime" />
+                <RadioButton
+                    android:id="@+id/RB_Cuatrimestrak"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/cuatri" />
+
+                <RadioButton
+                    android:id="@+id/RB_Semestral"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/semestral" />
+
+            </RadioGroup>
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_marginLeft="24dp"
+                android:id="@+id/cmbNumPer"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="24dp"
+                android:layout_height="wrap_content"
+                android:spinnerMode="dropdown" />
+            <View
+                android:background="#515050"
+                android:layout_width = "fill_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:layout_centerVertical ="true"
+                android:layout_alignParentTop="true"/>
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textSize="17dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp"
+                android:text="@string/modalidad"
+                android:textColor="#000"
+                />
+
+            <RadioGroup
+                android:orientation="horizontal"
+                android:layout_marginBottom="10dp"
+                android:id="@+id/RG_Modalidad"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <RadioButton
+                    android:id="@+id/rbescola"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/escolarizada" />
+                <RadioButton
+                    android:id="@+id/rbnecolarizada"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/nescolarizada" />
+
+                <RadioButton
+                    android:id="@+id/rbmixta"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/mixta" />
+
+            </RadioGroup>
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

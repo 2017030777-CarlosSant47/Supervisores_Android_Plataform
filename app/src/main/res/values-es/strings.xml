@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="stylesPdf">
+        h4 {font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;text-align: center;font-size: 16px;}
+        .parrafo {font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;text-align: justify;font-size: 16px;margin-left: 15px;margin-right: 15px;}
+        .parent {margin-left: 15px;margin-right: 15px;border: 0.1px solid #000;}
+        .p1 {border: 0.1px solid #000;
+        .imgtalbe{width: 100%;}
+        .nomsp {font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;text-align: center;font-size: 16px;}
+        body {margin-left: 1.08cm;margin-right: 1.08cm;margin-bottom: 1.08cm;margin-top: 2.05cm;}
+        .tablefir,td,th {border: 1px solid black;}.tablefir {border-collapse: collapse;width: 90%;}th {font-weight: normal;height: 50px;width: 50%;}
+        .tablefist {margin-left: 15px;margin-right: 15px;} .nomsp2{margin-top: 80px}
+    </string>
+    <string name="documet">CON FUNDAMENTO EN LO DISPUESTO POR LOS ARTÍCULOS 57 FRACCIÓN V Y 58 DE LA LEY GENERAL DE EDUCACIÓN Y ARTÍCULOS 22 FRACCIÓN V DE LA LEY DE EDUCACIÓN PARA EL ESTADO DE SINALOA, EL SUSCRITO ING. EZEQUIEL AYALA NIEBLA, SUPERVISOR DE EDUCACIÓN DE LA ZONA CENTRO EN EL ESTADO, ADSCRITO A LA DIRECCIÓN DE EDUCACIÓN MEDIA SUPERIOR Y SUPERIOR, DE LA SECRETARIA DE EDUCACIÓN PÚBLICA Y CULTURA EN EL ESTADO Y QUIEN EN ESTE ACTO SE IDENTIFICA CON CREDENCIAL EXPEDIDA POR LA DIRECCIÓN DE RECURSOS HUMANOS DE LA SECRETARIA DE EDUCACIÓN PÚBLICA Y CULTURA, PROCEDIÓ A REALIZAR LA VISITA ORDINARIA EN LOS TÉRMINOS QUE SEÑALAN LOS CITADOS ARTÍCULOS, MISMA QUE SE DESARROLLA EN LA CIUDAD DE CULIACÁN ROSALES, SINALOA, SIENDO LAS ONCE HORAS DEL DÍA 18 DE MAYO DEL AÑO EN CURSO, ME CONSTITUÍ FÍSCALMENTE EN EL DOMICILIO UBICADO EN AV. EL DORADO #734 COL. LAS QUINTAS, CULIACÁN ROSALES, SINALOA, A LAS 08:00 HORAS SEÑALADA PARA LLEVAR A CABO LA VISITA ORDINARIA AL INSTITUTO HUMANISTA DE SINALOA, A.C. DESPUES QUE FUE DEBIDAMENTE ENTERADA DE NUESTRA VISITA A LA DRA. MARÍA TRINIDAD CÁRDENAS PONCE, DIRECTORA DE LA PRESENTE INSTITUCIÓN Y APERSONADOS EN EL REFERIDO INMUEBLE QUE OCUPA LA MISMA SE PROCEDE A SOLICITAR LA PRESENCIA A LA LIC. TERESA SEGURA CÁRDENAS RESPONSABLE DE CONTROL ESCOLAR DE LA CITADA INSTITUCIÓN QUIEN ATENDERÁ LA PRESENTE DILIGENCIA Y SE IDENTIFICA CON LA CREDENCIAL DE ELECTOR NÚMERO 0786120351565. EL SUPERVISOR PROCEDE A IDENTIFICARSE NUEVAMENTE PARA LA REALIZACIÓN DE LA VISITA, ING. EZEQUIEL AYALA NIEBLA, CON CREDENCIAL EXPEDIDA POR LA SECRETARIA DE EDUCACIÓN PÚBLICA Y CULTURA EN EL ESTADO, EN LA QUE CONSTA SU CARGO LABORAL, DOCUMENTO QUE SE TUVO A LA VISTA DE LOS QUE FIRMAN LA PRESENTE. DESPUES DE QUEDAR DEBIDAMENTE ACREDITADO PARA LA VISITA DE INSPECCIÓN, SE LE INFORMA A QUIEN ATIENDE LA PRESENTE DILIGENCIA QUE DEBERA NOMBRAR Y DESIGNAR A DOS TESTIGOS Y EN CASO DE NO HACERLO EL SUPERVISOR PROCEDERA ADESIGNARLOS, POR LO QUE NOMBRA TESTIGOS A JORGE LUIS AGUILERA LOZANO, CON IDENTIFICACIÓN INSTITUTO FEDERAL ELECTORAL CON NÚMERO 0716128904045 Y TROSALBA ARBALLO RUBIO CON IDENTIFICACIÓN DEL INSTITUTO FEDERAL ELECTORAL CON NÚMERO 1305120549601. ENSEGUIDA SE PROCEDIO A INSPECCIONAR LO REFERENTE A: A) LA MATRICULA ESTUDIANTIL, REALIZANDO UN MUESTREO DE GRUPOS SELECCIONADOS POR EL SUPERVISOR DE MANERA AZAROSA, NO ENCONTRANDOSE INCIDENCIA EN NINGUNO DE LOS CUATRO GRUPOS REVISADOS, 100% DE ASISTENCIA DE PROFESORES, 100% DE CUMPLIMIENTO DE CARTAS DESCRIPTIVAS, LA TOTALIDAD DE LOS ALUMNOS CONOCEN CADA UNO DE LOS PROGRAMAS DE LA SMATERIAS QUE SE LES IMAPRTE, ACORDARON LA MANERA DE EVALUAR CON LA TOTALIDAD DE LOS PROFESORES Y TODOS AFIRMAN HACER ACORDADON LA SREGLAS REGIRÁN AL INTERIOR DE LAS AULAS EN CADA UNA DE LAS MATERIAS. B) SE REALIZO UN MUESTREO DE LOS EXPEDIENTES DE LOS DOCENTES, REVISANDO POR LA NORMATIVIDAD PARA IMPARTIR LA MATERIA REFLEJADA EN LOS HORARIOS, TANTO PERSONALES COMO DE LOS GRUPOS. C) EN CUANTO A LAS CONDICIONES GENERALES DEL EDIFICIO, SE OBSERVO EXCELENTE CONDICIONES DE HIGIENE, DE SEGURIDAD, ILUMINACIÓN Y VENTILACIÓN, LAS SALIDAS DE EMERGENCIAS Y LOS PUNTOS DE ENCUENTRO DEBIDAMENTE SEÑALADOS.HABIÉNDOSE CONCLUIDO LA VISITA DE VIGILANCIA SE LE CONCEDE EL USO DE LA VOZ AL PARITCULAR PARA QUE MANIFIESTE EN ESTE ACTO LO QUE A SU DERECHOP CONVENGA, MANIFESTANDO QUE NO TIENE NADA QUE EXPRESAR, UNA VEZ HECHO LO ANTERIOR Y HABIÉNDOSE DESAHOGADO TODOS Y CADA UNO DE LOS PUNTOS SEÑALADOS SE PROCEDE A DAR POR CONCLUIDA LA PRESENTE SUPERVISIÓN CONTENIDA EN EL FOLIO SEPyC/ZC001/17, SIENDO LAS 14:00 HORAS Y 10 MINUTOS DEL DÍA 18 DE MAYO DE 2017, HACIENDOLO CONSTAR, SUSCRIBIÉNDOLA AL MARGEN Y AL CANCE POR LOS QUE ELLA INTERVINIERON.</string>
+
+    <string name="app_name">Supervisión</string>
+    <string name="wems">Aviso we</string>
+    <string name="cargolavrga">oie we tienes whats, seria una lastima que accidentalmente se borrara la carpeta de tu cel xD 😫😂</string>
+    <string name="title_activity_menu">Supervisión</string>
+    <string name="title_activity_main2">Actividad</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="si">Si</string>
+    <string name="no">No</string>
+    <string name="hrt">Hrs. Teoricas</string>
+    <string name="hrp">Hrs. Practicas</string>
+    <string name="ccdnt">Porcentaje de Profesores que dieron a conocer a sus alumnos la carta Descriptiva</string>
+    <string name="action_settings">Ajustes</string>
+    <string name="logout">Cerrar Sesion</string>
+    <string name="SupPen">Supervisiones Pendientes</string>
+    <string name="MensajeInicio">Modalidad y Plan de Estudios</string>
+    <string name="good">Buena</string>
+    <string name="meduim">Regular</string>
+    <string name="bad">Mala</string>
+    <string name="guardando">Guardando Supervision por favor espere</string>
+    <string name="alumnosfuerasis">¿Tiene alumnos fuera de la lista de asistencias?</string>
+    <string name="alumnosdisca">¿Cuenta con alumnos discapacitados?</string>
+    <string name="alumnobeca">Porcentaje de Becas en función de la Matricula</string>
+    <string name="alumnosbecados">Porcentaje de Becas en función de la Matricula</string>
+    <string name="alumnosindigenas">¿Cuenta con alumnos que hablen alguna lengua indígena?</string>
+    <string name="alumnosidioma">¿Cuenta con alumnos que dominen un segundo idioma?</string>
+    <string name="programamaaca">Programa académico</string>
+    <string name="tecsu">Técnico Superior</string>
+    <string name="lic">Licenciatura</string>
+    <string name="mat">Maestría</string>
+    <string name="doc">Doctorado</string>
+    <string name="semestre">Semestre</string>
+    <string name="nmsemestre">Número de Materias en el Semestre</string>
+    <string name="asingnatura">Asignatura</string>
+    <string name="grupo">Grupo</string>
+    <string name="Grado">Grado</string>
+    <string name="nombre">Nombre</string>
+    <string name="materia">Materia</string>
+    <string name="asismaestro">Procentaje de maestros que cumplen con mas del 80% de Asistencia</string>
+    <string name="sasistio">Si asistio</string>
+    <string name="nasistio">No asistio</string>
+    <string name="programa">Plan de Estudios</string>
+    <string name="modalidad">Modalidad</string>
+    <string name="cuatri">Cuatrimestral</string>
+    <string name="trime">Trimestral</string>
+    <string name="semestral">Semestral</string>
+    <string name="evaluar">Porcentaje de Profesores que analizarón la mecanica de Evaluación</string>
+    <string name="mreglamento">Conocen la Manera de Evaluar</string>
+    <string-array name="cmbBecas">
+        <item>0%</item>
+        <item>5%</item>
+        <item>10%</item>
+        <item>15%</item>
+        <item>20%</item>
+        <item>o más</item>
+    </string-array>
+    <string-array name="cmbCartDescrip">
+        <item>100%</item>
+        <item>95%</item>
+        <item>90%</item>
+        <item>85%</item>
+        <item>80%</item>
+        <item>menos del 80%</item>
+    </string-array>
+    <string-array name="cmbAsisten">
+        <item>100%</item>
+        <item>95%</item>
+        <item>90%</item>
+        <item>80%</item>
+        <item>menos del 80%</item>
+    </string-array>
+    <string-array name="cmbDocumentos">
+        <item>Credencial del Lector</item>
+        <item>Pasaporte</item>
+        <item>Cedula Profesional</item>
+    </string-array>
+    <string name="smreglamento">Si lo mostró</string>
+    <string name="nmreglamento">No lo mostró</string>
+    <string name="mreglamentoi">Porcentaje de estudiantes que conocen el Reglamento de la Institución</string>
+    <string name="MaesDiesc">Porcentaje de Maestros que discutieron las reglas de operar en el aula</string>
+    <string name="comentarios">Comentarios</string>
+    <string name="Advertencia">Advertencia</string>
+    <string name="sConexion">Está en modo sin conexión todos los datos se guardaran en el dispositivo, tendrá que subirlos cuando esté conectado a una red Wi-Fi.</string>
+    <string name="exito">Éxito</string>
+    <string name="guaudadoSU">Se ha guardado con éxito la supervisión </string>
+    <string name="infoinstitucion">Información de la institución</string>
+    <string name="Domici">Domicilio</string>
+    <string name="guardar">Guardar</string>
+    <string name="escolarizada">Escolarizada</string>
+    <string name="nescolarizada">No Escolarizada</string>
+    <string name="mixta">Mixta</string>
+    <string name="aboutdev">
+        <b>Aplicación de Supervisión</b>\n\nEsta aplicación fue desarrollada con el fin de agilizar el proceso de supervisión de escuelas que estan en el Estado de Sinaloa.La aplicación fue desarrollada en colaboración por: \n\n
+        • Enrique Cerrito (Kroz)\n
+        • Carlos Santiago (CarlosSant47)\n
+        • Marcos Leva (MarkyENP)\n
+        • Fausto Eduardo (Mandil :V)\n
+        • Francisco Javier (Profe angulo)\n\n\n
+        <center>Hecho con amor en Java 💗💗💗💗</center>
+
+    </string>
+    <string name="camposVacios">No puede dejar los campos vacíos, por favor verifique que los campos que se piden estén completos</string>
+    <string name="de">de</string>
+    <string name="completado">Completado</string>
+    <string name="error">Error</string>
+    <string name="termino">Se han completado las preguntas doncentes de la cantidad de grupos continue con a supervisión.</string>
+    <string name="noTPreguntas">No ha terminado las encuestas a los grupos, por favor completelas para continuar con la supervisión</string>
+    <string name="cancelar">No puedes cancelar la supervisión, al acerlo se perderan todos los datos</string>
+    <string name="sconecion">Modo sin conexión</string>
+    <string name="conecion">Modo con conexión</string>
+    <string name="foliosRVOE">Folios RVOE</string>
+    <string name="agregar">Agregar</string>
+    <string name="alumno">Datos de Alumno</string>
+    <string name="supervisando">Institucion Supervisando: </string>
+    <string name="PlantaDocente">Planta Docente</string>
+    <string name="sem">Semestre</string>
+    <string name="cua">Cuatrimestre</string>
+    <string name="tri">Trimestre</string>
+    <string name="revAulaDes">En esta apartado el supervisor necesita entrar a una o más aulas de clase, para reunir la información requeridas.</string>
+    <string name="plantaDocDes">A continuación esta información será validada con la Planta Docente Autorizada por SEPyC (La institución deberá presentar la documentación)</string>
+    <string name="controlescDes">La información que se reúne dentro de este apartado, es necesario que el supervisor se reúna con el Director(a) del Plantel o encargado del mismo.</string>
+    <string name="condicionDes">El supervisor necesita, realizar una inspección dentro del plantel y anotar aspectos tales como Aulas, Talleres, Material Didáctico y de seguridad.</string>
+    <string name="comentariosDes">En este apartado se señalaran debilidades y fortalezas, así como sugerencias vistas durante la supervisión.</string>
+    <string name="proveedor">Proveedor</string>
+    <string name="paquete">Paquete</string>
+    <string name="internet">Internet</string>
+    <string name="centro_de_c_mputo">Centro de Cómputo</string>
+    <string name="bibloteca">Biblioteca</string>
+    <string name="impacto_vial_vig_3_a_os">Impacto Vial (Vig. 3 Años)</string>
+    <string name="acreditaci_n_de_bomberos_vig_1_a_o">Acreditación de Bomberos (Vig. 1 año)</string>
+    <string name="punto_de_encuentro_se_alizado">Punto de Encuentro Señalizado</string>
+    <string name="pupitre">Pupitre</string>
+    <string name="n_mero_de_aulas">Número de aulas</string>
+    <string name="n_mero_de_talleres">Número de talleres</string>
+    <string name="n_mero_de_laboratorios">Número de laboratorios</string>
+    <string name="n_mero_de_sanitarios">Número de sanitarios</string>
+    <string name="hombres">Hombres</string>
+    <string name="mujeres">Mujeres</string>
+    <string name="recursos_did_cticos">Recursos Didácticos</string>
+    <string name="acreditaci_n_de_protecci_n_civil_vig_1_a_o">Acreditación de Protección Civil (Vig. 1 año)</string>
+    <string name="guardar_supervision">Guardar Supervisión</string>
+    <string name="tomas_fotos_de_documentos">Tomar fotos de Documentos</string>
+    <string name="cancelar_supervision">¿Quieres Cancelar la Supervisión?</string>
+    <string name="cancelar_sup2">Al cancelar la supervisión no se guardara ningún cambio y tendra que realizarla de nuevo</string>
+    <string name="aboutD">Supervisor App Copyright 2018 \nSecretaria de Educación Publica y Cultura</string>
+    <string name="loading">Cargando</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="nmaterias">Número de materias en el</string>
+    <string name="nProfeM">El número de docentes en Autorizados y No autorizados no es igual a la cantidad en los grados</string>
+    <string name="profesiograma">Profesiograma</string>
+    <string name="descripcion_pro">Descripción del proceso</string>
+    <string name="numero_de_credencial">Número de credencial</string>
+    <string name="no_supervision">Hurra! No tienes supervisiones programadas</string>
+    <string name="no_rvoes">Esta institución no cuenta con RVOES registrados, continue con la supervisión</string>
+    <string name="superviciones_pendientes">Supervisiones Pendientes</string>
+    <string name="supervicion_pendiente_local">No tiene conexión a internet, la supervición realizada se guardara en el dispositivo, podra subir la información mas tarde cuando tenga conexión a intenet</string>
+    <string name="configuracion">Configuración</string>
+    <string name="cerrar_sesion">Cerrar Sesión</string>
+    <string name="cancel">Cancelar</string>
+    <string name="accept">Aceptar</string>
+    <string name="contrasenaIncorrecta">Usuario o contraseña Incorrectos</string>
+    <string name="errorSesion">Se produjo un error al iniciar sesión</string>
+    <string name="cerrar_s_mensaje">Deseas cerrar sesión? Todos los datos seran borrados del dispositivo</string>
+    <string name="title_activity_about">Acerca de</string>
+    <string name="restaurar_datos">Restaurar Datos</string>
+    <string name="version_de_software">Version de Software</string>
+    <string name="no_supervicion_actual">Hurra! No tienes supervisiones programadas para el día de hoy</string>
+    <string name="iniciar_supervision">Iniciar Supervisión</string>
+    <string name="usuario">Usuario</string>
+    <string name="contrasena">Contraseña</string>
+    <string name="iniciar_sesion">Iniciar Sesión</string>
+    <string name="sistema_nombre">Sistema de Supervisión del Estado de Sinaloa</string>
+    <string name="sistema_abreviado">S I S E S</string>
+    <string name="iniciando_sesion">Iniciando sesión</string>
+    <string name="conectando_server">Conectando con el servidor por favor espere</string>
+    <string name="conexion_requerida">Se requiere conexion a internet</string>
+    <string name="hurra_no_tienes_supervisiones_pendientes">Hurra! No Tienes Supervisiones Pendientes</string>
+    <string name="menu_principal">"Menú Principal "</string>
+
+</resources>

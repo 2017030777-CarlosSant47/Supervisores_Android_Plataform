@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.lucasurbas.listitemview.ListItemView
+        android:id="@+id/livInstitucion"
+        app:liv_icon="@drawable/school"
+        app:liv_displayMode="circularIcon"
+        app:liv_iconColor="#fff"
+        app:liv_circularIconColor="@color/colorPrimary"
+        app:liv_title="Nombre Institucion"
+
+        app:liv_subtitle="Zona Nombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </com.lucasurbas.listitemview.ListItemView>
+</RelativeLayout>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent" android:layout_width="match_parent">
+
+    
+    <android.support.v7.widget.CardView
+        android:layout_marginTop="48dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginRight="36dp"
+        app:cardBackgroundColor="#fcfcfc"
+        app:cardCornerRadius="10dp"
+        app:cardPreventCornerOverlap="false"
+        app:cardUseCompatPadding="false"
+        card_view:cardElevation="10dp"
+        android:layout_marginBottom="48dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:id="@+id/rlInformacion"
+                android:layout_alignParentTop="true"
+                android:layout_width="match_parent"
+                android:layout_height="180dp">
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:layout_width="200dp"
+                    android:id="@+id/imgPreview"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/imagelist"
+                    app:riv_corner_radius_top_left="10dp"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:layout_toEndOf="@+id/imgPreview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignRight="@+id/lbfecha"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="45dp"
+                    android:maxLines="2"
+                    android:id="@+id/lbEscuela"
+                    android:text="Universidad Politenica de Sinaloa"
+                    android:textColor="#212121"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/lbzona"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/lbEscuela"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="-19dp"
+                    android:layout_toEndOf="@+id/imgPreview"
+                    android:text="Zona Sur"
+                    android:layout_marginEnd="10dp"
+                    android:textColor="@color/secondary_text_default_material_light"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignTop="@+id/lbzona"
+                    android:id="@+id/lbInformacion"
+
+                    android:layout_alignBottom="@+id/lbzona"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="-96dp"
+
+                    android:layout_toEndOf="@+id/imgPreview"
+                    android:scrollbarAlwaysDrawVerticalTrack="true"
+                    android:scrollbars="vertical"
+                    android:text="Mazatlan Sinaloa\nCarretera Municipal"
+                    android:textColor="@color/secondary_text_default_material_light"
+                    android:textSize="10sp" />
+
+                <android.support.v7.widget.AppCompatButton
+                    style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_toEndOf="@+id/imgPreview"
+                    android:layout_marginLeft="8dp"
+                    android:layout_alignParentBottom="true"
+                    android:id="@+id/btnSupervision"
+                    android:padding="0dp"
+                    android:text="Iniciar Supervision"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:id="@+id/lbfecha"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignEnd="@+id/lbzona"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="0dp"
+                    android:text="17/02/2019"
+                    android:textSize="8sp" />
+
+
+                <TextView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_alignBaseline="@+id/btnSupervision"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="10dp"
+                    android:drawableBottom="@drawable/complete"
+                    android:drawableTint="#ed3848" />
+
+
+            </RelativeLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_below="@+id/rlInformacion"
+            android:layout_height="match_parent">
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/listInstituciones"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true">
+            </ListView>
+        </LinearLayout>
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+
+</RelativeLayout>

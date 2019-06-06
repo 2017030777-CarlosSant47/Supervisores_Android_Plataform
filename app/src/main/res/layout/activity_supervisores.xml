@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Supervisores"
+    android:orientation="vertical">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+                android:text="Nombres"
+                android:textColor="#000"
+                />
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:stretchColumns="*">
+
+                <TableRow android:layout_marginTop="10dp">
+
+                    <EditText
+                        android:id="@+id/txtAPaterno"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Apellido Paterno"
+                        android:inputType="text" />
+
+                    <EditText
+                        android:id="@+id/txtAMateno"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Apellido Materno"
+                        android:inputType="text" />
+                </TableRow>
+
+                <TableRow android:layout_marginTop="10dp">
+
+                    <EditText
+                        android:id="@+id/txtPNom"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Primer Nombre"
+                        android:inputType="text" />
+
+
+                    <EditText
+                        android:id="@+id/txtSNom"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Segundo Nombre"
+                        android:inputType="text" />
+                </TableRow>
+            </TableLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+                android:text="Datos Personales"
+                android:layout_marginTop="10dp"
+                android:textColor="#000"
+                />
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stretchColumns="*">
+
+            </TableLayout>
+            <EditText
+                android:id="@+id/txtINE"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="INE"
+                android:inputType="text" />
+            <EditText
+                android:id="@+id/txtCURP"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="CURP"
+                android:inputType="text" />
+            <EditText
+                android:id="@+id/txtRFC"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="RFC"
+                android:layout_marginTop="10dp"
+                android:inputType="text" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+                android:text="Domicilio y Telefono"
+                android:layout_marginTop="10dp"
+                android:textColor="#000"
+                />
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stretchColumns="*">
+
+                <TableRow
+                    android:layout_marginTop="10dp">
+                    <EditText
+                        android:id="@+id/txtDirec"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Direccion"
+                        android:inputType="text"
+                        />
+                    <EditText
+                        android:id="@+id/txtColonia"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Colonia"
+                        android:inputType="text"
+                        />
+                </TableRow>
+                <TableRow
+                    android:layout_marginTop="10dp">
+                    <EditText
+                        android:id="@+id/txtTel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Telefono"
+                        android:inputType="number"
+                        />
+                    <EditText
+                        android:id="@+id/txtCel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Celular"
+                        android:inputType="number"
+                        />
+                </TableRow>
+            </TableLayout>
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stretchColumns="*">
+
+                <TableRow
+                    android:layout_marginTop="10dp">
+                    <EditText
+                        android:id="@+id/txtFNacio"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Nacimiento"
+                        android:inputType="date" />
+                    <EditText
+                        android:id="@+id/txtFIngreso"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Ingreso"
+                        android:inputType="date" />
+                </TableRow>
+
+                <TableRow>
+
+
+
+
+                </TableRow>
+            </TableLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+                android:text="Datos de Usuario"
+                android:layout_marginTop="10dp"
+                android:textColor="#000"
+                />
+            <EditText
+                android:layout_marginTop="10dp"
+                android:id="@+id/txtUser"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Usuario"
+                android:inputType="text" />
+            <EditText
+                android:layout_marginTop="10dp"
+                android:id="@+id/txtpassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Contrasena"
+                android:inputType="textPassword"
+                android:layout_marginBottom="10dp"/>
+        </LinearLayout>
+    </ScrollView>
+    <!--hijo de puta jalaaaa..... xD    c-->
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/btnNext"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="@dimen/fab_margin"
+        android:layout_gravity="bottom|end"
+        app:srcCompat="@drawable/flechita" />
+
+
+
+
+
+</FrameLayout>
+
+

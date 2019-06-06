@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textSize="17dp"
+            android:textColor="#000"
+            android:text="Debilidades"/>
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="*">
+            <TableRow
+                android:layout_marginTop="10dp">
+                <CheckBox
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/cbinternet"
+                    android:text="Internet"/>
+                <CheckBox
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/cbmatdidactico"
+                    android:text="Material Didáctico"/>
+            </TableRow>
+            <TableRow
+                android:layout_marginTop="10dp">
+                <CheckBox
+                    android:id="@+id/cbbibloteca"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Biblioteca Digital"/>
+                <CheckBox
+                    android:id="@+id/cbplatforweb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Plataformas Web"/>
+
+            </TableRow>
+            <TableRow
+                android:layout_marginTop="10dp">
+                <CheckBox
+                    android:id="@+id/cblab"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Laboratorios"/>
+                <CheckBox
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/cbpuntoen"
+                    android:text="Puntos de Encuentro"/>
+
+            </TableRow>
+        </TableLayout>
+        <View
+            android:background="#515050"
+            android:layout_width = "fill_parent"
+            android:layout_height="1dp"
+            android:layout_centerVertical ="true"
+            android:layout_alignParentTop="true"/>
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textSize="17dp"
+            android:textColor="#000"
+            android:text="Fortalezas"/>
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="*">
+            <TableRow
+                android:layout_marginTop="10dp">
+                <CheckBox
+                    android:id="@+id/cbinvernaderos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Invernaderos"/>
+                <CheckBox
+                    android:id="@+id/cbsustentable"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Sustentable"/>
+            </TableRow>
+            <TableRow
+                android:layout_marginTop="10dp">
+                <CheckBox
+                    android:id="@+id/cbhornos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Hornos"/>
+                <CheckBox
+                    android:id="@+id/cbbuenamlab"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Buen Ambiente Laboral"/>
+
+            </TableRow>
+            <TableRow
+                android:layout_marginTop="10dp">
+                <CheckBox
+                    android:id="@+id/cbtaller"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Taller Especializado"/>
+                <CheckBox
+                    android:id="@+id/cbinstalacion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Excelente Instalaciones"/>
+
+            </TableRow>
+            <TableRow
+                android:layout_marginTop="10dp">
+                <CheckBox
+                    android:layout_width="match_parent"
+                    android:id="@+id/rbElevador"
+                    android:layout_height="wrap_content"
+                    android:text="Elevador"/>
+                <CheckBox
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/rbRampa"
+                    android:text="Rampa"/>
+            </TableRow>
+            <TableRow
+                android:layout_marginTop="10dp">
+                <CheckBox
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/rbEstacionamiento"
+                    android:text="Estacionamiento"/>
+            </TableRow>
+        </TableLayout>
+        <View
+            android:background="#515050"
+            android:layout_width = "fill_parent"
+            android:layout_height="1dp"
+            android:layout_centerVertical ="true"
+            android:layout_alignParentTop="true"/>
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textSize="17dp"
+            android:textColor="#000"
+            android:text="Sugerencias"/>
+        <CheckBox
+            android:id="@+id/cbactualizarpd"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content"
+            android:text="Actualizar Planta Docente"/>
+        <CheckBox
+            android:id="@+id/cbrpfalumnos"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content"
+            android:text="Dar Reglamentos, Programas, Forma de Evaluar a los alumnos"/>
+        <CheckBox
+            android:id="@+id/cbpropuestad"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content"
+
+            android:text="Tomar en Cuenta Propuestas del Docente"/>
+        <CheckBox
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:id="@+id/cbactualizarRVOE"
+            android:layout_height="wrap_content"
+            android:text="Actualizar RVOE"/>
+        <CheckBox
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/cbrvoesoperar"
+            android:text="Dar aviso a RVOE sin Operar"/>
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Otros:"
+
+                android:id="@+id/txtotros"
+                android:inputType="textMultiLine"
+
+                />
+        </android.support.design.widget.TextInputLayout>
+
+
+
+        <Button
+            android:layout_marginTop="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:textColor="#fff"
+            android:id="@+id/btnguardar"
+            android:text="@string/guardar_supervision"/>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:visibility="invisible"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="@dimen/fab_margin"
+            android:src="@android:drawable/ic_dialog_email"
+
+            />
+
+    </LinearLayout>
+</ScrollView>

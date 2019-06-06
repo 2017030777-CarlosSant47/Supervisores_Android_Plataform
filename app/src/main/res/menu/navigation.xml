@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/raula"
+        android:icon="@drawable/preguntas"
+
+        android:title="Revision en el Aula" />
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/school"
+        android:title="Planta Docente" />
+
+    <item
+        android:id="@+id/navigation_control"
+        android:icon="@drawable/personal"
+        android:title="Control escolar y RVOE" />
+    <item
+        android:id="@+id/navigation_codiciones"
+        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:title="Condiciones de la institucion" />
+    <item
+        android:id="@+id/navigation_comentarios"
+        android:icon="@drawable/comment"
+        android:title="Comentarios y Sugerencias" />
+
+
+
+</menu>

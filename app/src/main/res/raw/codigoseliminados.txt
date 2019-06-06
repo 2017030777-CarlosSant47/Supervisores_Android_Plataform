@@ -1,0 +1,1113 @@
+btnFolios.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if(txtREVOEoperando.getText().length() > 0)
+                {
+                    final int numRVOE = Integer.parseInt(txtREVOEoperando.getText().toString());
+                    AlertDialog.Builder promptFolios = new AlertDialog.Builder(Infraestructura.this);
+                    View Mv = getLayoutInflater().inflate(R.layout.layout_msgfolios, null);
+                    promptFolios.setTitle(getResources().getString(R.string.foliosRVOE));
+                    final EditText txtFolios = Mv.findViewById(R.id.txtfolios);
+                    final Button btnPromt = Mv.findViewById(R.id.btnpromp);
+                    promptFolios.setView(Mv);
+                    dialog = promptFolios.create();
+                    dialog.show();
+                    btnPromt.setText(getResources().getString(R.string.agregar) + " "+z
+                            + " " +getResources().getString(R.string.de) + " " + numRVOE);
+                    btnPromt.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            if(txtFolios.getText().length() > 0 && z <= numRVOE)
+                            {
+                                //foliosRVOE += txtFolios.getText().toString() + "&";
+                                btnPromt.setText(getResources().getString(R.string.agregar) + " "+z
+                                        + " " +getResources().getString(R.string.de) + " " + numRVOE);
+                                foliosRVOE = foliosRVOE + z + " - "+txtFolios.getText().toString() + "\n";
+                                lblistRVOE.setText(foliosRVOE);
+                                z++;
+
+                                if(z > numRVOE) {
+                                    btnFolios.setEnabled(false);
+                                    btnFolios.setText("Completado");
+                                    txtREVOEoperando.setEnabled(false);
+                                    dialog.hide();
+                                }
+
+                            }
+
+                            else if(txtFolios.getText().length() <= 0)
+                            {
+                                Toast.makeText(Infraestructura.this, "No puedes dejar el campo vacio",
+                                        Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
+                }
+                else
+                {
+                    Toast.makeText(Infraestructura.this, "No puedes dejar el campo vacio",
+                            Toast.LENGTH_SHORT).show();
+                }
+
+
+            }
+        });
+
+
+         @SuppressLint("SetJavaScriptEnabled")
+            public void ViewPDF(Context context)
+            {
+                AlertDialog.Builder promptFolios = new AlertDialog.Builder(Infraestructura.this);
+                View Mv = getLayoutInflater().inflate(R.layout.pdfview_layout, null);
+
+                final Uri path = Uri.parse("file:///android_res/raw/pdf1pro.pdf");
+                promptFolios.setTitle(getResources().getString(R.string.foliosRVOE));
+                WebView webPdf = Mv.findViewById(R.id.lpdfread);
+                webPdf.getSettings().setJavaScriptEnabled(true);
+                WebSettings webSettings = webPdf.getSettings();
+                webSettings.setPluginState(PluginState.ON);
+                webPdf.loadUrl(path.toString());
+                promptFolios.setView(Mv);
+                dialog = promptFolios.create();
+                dialog.show();
+            }
+            /*
+                    AlertDialog.Builder promptFolios = new AlertDialog.Builder(Infraestructura.this);
+                    View Mv = getLayoutInflater().inflate(R.layout.pdfview_layout, null);
+                    /*
+                    final Uri path = Uri.parse("android.resource://com.carlossant47.supervision/"+R.raw.pdf1pro);
+                    PDFView pdfView = Mv.findViewById(R.id.pdfView);
+                    pdfView.fromUri(path);
+                    promptFolios.setTitle(getResources().getString(R.string.foliosRVOE));
+                    WebView webPdf = Mv.findViewById(R.id.lpdfread);
+                    Log.w("URL", path.toString());
+                    webPdf.getSettings().setJavaScriptEnabled(true);
+                    WebSettings webSettings = webPdf.getSettings();
+                    webSettings.setPluginState(PluginState.ON);
+                    webPdf.loadUrl(path.toString());
+                    promptFolios.setView(Mv);
+                    dialog = promptFolios.create();
+                    dialog.show();
+                    */
+/*
+            btnNext.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    MenuItem i;
+                    Log.w("MS0", String.valueOf(parts));
+                    switch (parts) {
+                        case 1:
+                            i = menu.findItem(R.id.navigation_home);
+                            i.setEnabled(true);
+                            i = menu.findItem(R.id.raula);
+                            i.setEnabled(false);
+                            txtDescripccion.setText(getResources().getString(R.string.plantaDocDes));
+                            prPlantadocente.setVisibility(View.VISIBLE);
+                            prcomentarios.setVisibility(View.GONE);
+                            prcondiciones.setVisibility(View.GONE);
+                            prControlEsc.setVisibility(View.GONE);
+                            prRevision.setVisibility(View.GONE);
+                            setComplete(i);
+
+                            parts = 2;
+                            break;
+                        case 2:
+
+                            i = menu.findItem(R.id.navigation_control);
+                            i.setEnabled(true);
+                            i = menu.findItem(R.id.navigation_home);
+                            i.setEnabled(false);
+                            parts = 3;
+                            txtDescripccion.setText(getResources().getString(R.string.controlescDes));
+
+                            setComplete(i);
+                            prPlantadocente.setVisibility(View.GONE);
+                            prcomentarios.setVisibility(View.GONE);
+                            prcondiciones.setVisibility(View.GONE);
+                            prControlEsc.setVisibility(View.VISIBLE);
+                            prRevision.setVisibility(View.GONE);
+                            break;
+                        case 3:
+
+                            i = menu.findItem(R.id.navigation_codiciones);
+                            i.setEnabled(true);
+                            i = menu.findItem(R.id.navigation_control);
+                            i.setEnabled(false);
+                            parts = 4;
+                            txtDescripccion.setText(getResources().getString(R.string.condicionDes));
+
+                            setComplete(i);
+                            prPlantadocente.setVisibility(View.GONE);
+                            prcomentarios.setVisibility(View.GONE);
+                            prcondiciones.setVisibility(View.VISIBLE);
+                            prControlEsc.setVisibility(View.GONE);
+                            prRevision.setVisibility(View.GONE);
+                            break;
+                        case 4:
+                            txtDescripccion.setText(getResources().getString(R.string.comentariosDes));
+                            i = menu.findItem(R.id.navigation_comentarios);
+                            i.setEnabled(true);
+                            i = menu.findItem(R.id.navigation_codiciones);
+                            i.setEnabled(false);
+                            parts = 5;
+                            setComplete(i);
+                            prPlantadocente.setVisibility(View.GONE);
+                            prcomentarios.setVisibility(View.VISIBLE);
+                            prcondiciones.setVisibility(View.GONE);
+                            prControlEsc.setVisibility(View.GONE);
+                            btnNext.setVisibility(View.GONE);
+                            prRevision.setVisibility(View.GONE);
+                            break;
+                        case 5:
+                            break;
+                    }
+                }
+            });
+            */
+
+                                for (int x = 0; x < PreguntasDocente.size(); x++) {
+                                    Log.w("----------------", "-----------------");
+                                    Log.w("Semestre", String.valueOf(PreguntasDocente.get(x).semestre));
+                                    Log.w("Numero de Semestre", String.valueOf(PreguntasDocente.get(x).nmsemestre));
+                                    Log.w("Asistencia Profesor", String.valueOf(PreguntasDocente.get(x).asisprofesor));
+                                    Log.w("Horas Teoricas", String.valueOf(PreguntasDocente.get(x).ccdht));
+                                    Log.w("Horas Practicas", String.valueOf(PreguntasDocente.get(x).ccdhp));
+                                    Log.w("Acordaron Evualar", String.valueOf(PreguntasDocente.get(x).evaluar));
+                                    Log.w("Conocen Evaluar", String.valueOf(PreguntasDocente.get(x).reglamateria));
+                                    Log.w("Reglamento Institucion", String.valueOf(PreguntasDocente.get(x).reglamento));
+                                    Log.w("Alumnos Fuera", String.valueOf(PreguntasDocente.get(x).listaasis1));
+                                    Log.w("Fuera Cuantos", String.valueOf(PreguntasDocente.get(x).listaasis2));
+                                    Log.w("Discapacitados", String.valueOf(PreguntasDocente.get(x).discapacidad1));
+                                    Log.w("Cuantos Dis", String.valueOf(PreguntasDocente.get(x).discapacidad2));
+                                    Log.w("BEcados", String.valueOf(PreguntasDocente.get(x).Becados));
+                                    Log.w("Idigena", String.valueOf(PreguntasDocente.get(x).indigena1));
+                                    Log.w("Cuanto Indigena", String.valueOf(PreguntasDocente.get(x).indegena2));
+                                    Log.w("Cunadio Otro idioma", String.valueOf(PreguntasDocente.get(x).idioma2));
+                                    Log.w("Otro idioma", String.valueOf(PreguntasDocente.get(x).idioma1));
+                                    Log.w("Comentarios", String.valueOf(PreguntasDocente.get(x).Comentarios));
+                                    Log.w("Asignatura", String.valueOf(PreguntasDocente.get(x).asegnatura));
+                                    Log.w("Grupo", String.valueOf(PreguntasDocente.get(x).grupo));
+                                }
+                                Log.w("Prueba", String.valueOf(PreguntasDocente.get(rev).indigena1));
+
+
+        /*
+        timer.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                if(Permissions.isNettworkConnect(getApplicationContext()))
+                {
+                    ViewDataSupervision();
+                    Log.w("Succes", "conexion");
+                    timer.cancel();
+                }
+                else
+                {
+                    Log.w("Error", "No conexion");
+                }
+
+            }
+        }, 500, 2000);//CADA DOS SEGUNDO ESTARA CHECANDO SI HAY CONEXION A INTERNET MINIMO PARA BAJAR LOS DATOS DEL SERVER
+        */
+
+         btnFolios.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+
+                        if (txtREVOEoperando.getText().length() > 0) {
+                            final int numRVOE = Integer.parseInt(txtREVOEoperando.getText().toString());
+                            AlertDialog.Builder promptFolios = new AlertDialog.Builder(Infraestructura.this);
+                            View Mv = getLayoutInflater().inflate(R.layout.layout_msgfolios, null);
+                            promptFolios.setTitle(getResources().getString(R.string.foliosRVOE));
+                            final EditText txtFolios = Mv.findViewById(R.id.txtfolios);
+                            final Button btnPromt = Mv.findViewById(R.id.btnpromp);
+                            promptFolios.setView(Mv);
+                            dialog = promptFolios.create();
+                            dialog.show();
+                            btnPromt.setText(getResources().getString(R.string.agregar) + " " + z
+                                    + " " + getResources().getString(R.string.de) + " " + numRVOE);
+                            btnPromt.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    if (txtFolios.getText().length() > 0 && z <= numRVOE) {
+                                        //foliosRVOE += txtFolios.getText().toString() + "&";
+                                        btnPromt.setText(getResources().getString(R.string.agregar) + " " + z
+                                                + " " + getResources().getString(R.string.de) + " " + numRVOE);
+                                        foliosRVOE = foliosRVOE + z + " - " + txtFolios.getText().toString() + "\n";
+                                        lblistRVOE.setText(foliosRVOE);
+                                        z++;
+
+                                        if (z > numRVOE) {
+                                            btnFolios.setEnabled(false);
+                                            btnFolios.setText("Completado");
+                                            txtREVOEoperando.setEnabled(false);
+                                            dialog.hide();
+                                        }
+
+                                    } else if (txtFolios.getText().length() <= 0) {
+                                        Toast.makeText(Infraestructura.this, "No puedes dejar el campo vacio",
+                                                Toast.LENGTH_SHORT).show();
+                                    }
+                                }
+                            });
+                        } else {
+                            Toast.makeText(Infraestructura.this, "No puedes dejar el campo vacio",
+                                    Toast.LENGTH_SHORT).show();
+                        }
+
+
+                    }
+                });
+                 RG_Hig.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                            @Override
+                            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                                switch (checkedId) {
+                                    case R.id.rbhigbuena:
+                                        codiciones.higiene = 3;
+                                        break;
+                                    case R.id.rbhigreg:
+                                        codiciones.higiene = 2;
+                                        break;
+                                    case R.id.rbhigmala:
+                                        codiciones.higiene = 1;
+                                        break;
+
+                                }
+                                Log.w("Codiciones", String.valueOf(codiciones.higiene));
+                            }
+                        });
+                        RG_Seg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                            @Override
+                            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                                switch (checkedId) {
+                                    case R.id.rbsegbuena:
+                                        codiciones.seguridad = 3;
+                                        break;
+                                    case R.id.rbsegreg:
+                                        codiciones.seguridad = 2;
+                                        break;
+                                    case R.id.rbsegmala:
+                                        codiciones.seguridad = 1;
+                                        break;
+
+                                }
+                                Log.w("Codiciones", String.valueOf(codiciones.seguridad));
+                            }
+                        });
+
+                        RG_Dic.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                            @Override
+                            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                                switch (checkedId) {
+                                    case R.id.rbdicsi:
+                                        codiciones.recdidactico = 1;
+                                        break;
+                                    case R.id.rbdicno:
+                                        codiciones.recdidactico = 0;
+                                        break;
+
+                                }
+                                Log.w("Codiciones", String.valueOf(codiciones.recdidactico));
+
+                            }
+                        });
+                        RG_Bil.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                            @Override
+                            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                                switch (checkedId) {
+                                    case R.id.rbbilsi:
+                                        codiciones.bilboteca = 1;
+                                        break;
+                                    case R.id.rbbilno:
+                                        codiciones.bilboteca = 0;
+                                        break;
+
+                                }
+                                Log.w("Codiciones", String.valueOf(codiciones.bilboteca));
+
+                            }
+                        });
+                        RG_Com.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                            @Override
+                            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                                switch (checkedId) {
+                                    case R.id.rbcomsi:
+                                        codiciones.centrocom = 1;
+                                        break;
+                                    case R.id.rbcomno:
+                                        codiciones.centrocom = 0;
+                                        break;
+
+                                }
+                                Log.w("Codiciones", String.valueOf(codiciones.centrocom));
+
+                            }
+                        });
+                        RG_Inter.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                            @SuppressLint("SetTextI18n")
+                            @Override
+                            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                                switch (checkedId) {
+                                    case R.id.rbintersi:
+                                        codiciones.internet1 = 1;
+                                        txtinter[0].setEnabled(true);//PAQUETE
+                                        txtinter[1].setEnabled(true);//PROVEEDOR
+                                        txtinter[1].setText("");
+                                        txtinter[0].setText("");
+                                        break;
+                                    case R.id.rbinterno:
+                                        codiciones.internet1 = 0;
+                                        txtinter[0].setEnabled(false);
+                                        txtinter[1].setEnabled(false);
+                                        txtinter[1].setText("Ninguno");
+                                        txtinter[0].setText("Ninguno");
+                                        break;
+
+                                }
+                                Log.w("Codiciones", String.valueOf(codiciones.internet1));
+
+                            }
+                        });
+                        RG_Audi.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                            @Override
+                            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                                switch (checkedId) {
+                                    case R.id.rbaudisi:
+                                        codiciones.auditorio = 1;
+                                        break;
+                                    case R.id.rbaudino:
+                                        codiciones.auditorio = 0;
+                                        break;
+
+                                }
+                                Log.w("Codiciones", String.valueOf(codiciones.auditorio));
+
+                            }
+                        });
+                        RG_Verde.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                            @Override
+                            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                                switch (checkedId) {
+                                    case R.id.rbverdesi:
+                                        codiciones.areaverde = 1;
+                                        break;
+                                    case R.id.rbverdeno:
+                                        codiciones.areaverde = 0;
+                                        break;
+
+                                }
+                                Log.w("Codiciones", String.valueOf(codiciones.areaverde));
+
+                            }
+                        });
+
+                        RG_Civil.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                            @Override
+                            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                                switch (checkedId) {
+                                    case R.id.rbcivilsi:
+                                        codiciones.preteccioncivil = 1;
+                                        break;
+                                    case R.id.rbcivilno:
+                                        codiciones.preteccioncivil = 0;
+                                        break;
+
+                                }
+                                Log.w("Codiciones", String.valueOf(codiciones.preteccioncivil));
+
+                            }
+                        });
+                        RG_Bom.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                            @Override
+                            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                                switch (checkedId) {
+                                    case R.id.rbbomsi:
+                                        codiciones.bombero = 1;
+                                        break;
+                                    case R.id.rbbomno:
+                                        codiciones.bombero = 0;
+                                        break;
+
+                                }
+                                Log.w("Codiciones", String.valueOf(codiciones.bombero));
+
+                            }
+                        });
+                        RG_Encuentro.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                            @Override
+                            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                                switch (checkedId) {
+                                    case R.id.rbsenalsi:
+                                        codiciones.centrocom = 1;
+                                        break;
+                                    case R.id.rbsenalno:
+                                        codiciones.centrocom = 0;
+                                        break;
+
+                                }
+                                Log.w("Codiciones", String.valueOf(codiciones.centrocom));
+                            }
+                        });
+                        //aki akaba condicionales
+
+                        //Planta dosente--------------------------------------------------------------------------------------------------------------------------- ES DOCENTE >:V
+
+
+                        RG_Modalidad.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                            @Override
+                            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                                switch (checkedId) {
+                                    case R.id.rbescola:
+                                        plataDocente.modalidad = 1;
+                                        break;
+                                    case R.id.rbnecolarizada:
+                                        plataDocente.modalidad = 2;
+                                        break;
+                                    case R.id.rbmixta:
+                                        plataDocente.modalidad = 3;
+                                        break;
+
+                                }
+                                Log.w("PLANTA DOCENTE", String.valueOf(plataDocente.modalidad));
+                            }
+                        });
+
+
+                        RG_Curi.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                            @Override
+                            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                                switch (checkedId) {
+                                    case R.id.rbcursi:
+                                        plataDocente.curricumul = 1;
+                                    case R.id.rbcurno:
+                                        plataDocente.curricumul = 0;
+                                        break;
+                                }
+                                Log.w("PLANTA DOCENTE", String.valueOf(plataDocente.curricumul));
+                            }
+                        });
+
+
+                        RG_Acta.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                            @Override
+                            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                                switch (checkedId) {
+                                    case R.id.rbactasi:
+                                        plataDocente.Actanacimiento = 1;
+                                        break;
+                                    case R.id.rbactano:
+                                        plataDocente.Actanacimiento = 0;
+                                        break;
+                                }
+                                Log.w("PLANTA DOCENTE", String.valueOf(plataDocente.Actanacimiento));
+                            }
+                        });
+
+                        RG_Nacion.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                            @Override
+                            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                                switch (checkedId) {
+                                    case R.id.rbnacsi:
+                                        plataDocente.nacionalidad = 1;
+                                        break;
+                                    case R.id.rbnacno:
+                                        plataDocente.nacionalidad = 0;
+                                        break;
+
+                                }
+                                Log.w("PLANTA DOCENTE", String.valueOf(plataDocente.nacionalidad));
+
+                            }
+                        });
+
+                        RG_Titulo.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                            @Override
+                            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                                switch (checkedId) {
+                                    case R.id.rbtilsi:
+                                        plataDocente.titulo = 1;
+                                        break;
+                                    case R.id.rbtilno:
+                                        plataDocente.titulo = 0;
+                                        break;
+                                }
+                                Log.w("PLANTA DOCENTE", String.valueOf(plataDocente.titulo));
+                            }
+                        });
+
+                        RG_Cedula.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                            @Override
+                            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                                switch (checkedId) {
+                                    case R.id.rbceldsi:
+                                        plataDocente.cedula = 1;
+                                        break;
+                                    case R.id.rbceldno:
+                                        plataDocente.cedula = 0;
+                                        break;
+                                }
+                                Log.w("PLANTA DOCENTE", String.valueOf(plataDocente.cedula));
+
+                            }
+                        });
+
+                        RG_Consta.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                            @Override
+                            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                                switch (checkedId) {
+                                    case R.id.rbconsi:
+                                        plataDocente.dipconstacia = 1;
+                                        break;
+                                    case R.id.rbconno:
+                                        plataDocente.dipconstacia = 0;
+                                        break;
+
+                                }
+                                Log.w("PLANTA DOCENTE", String.valueOf(plataDocente.dipconstacia));
+
+                            }
+                        });
+
+                        RG_Cumple.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                            @Override
+                            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                                switch (checkedId) {
+                                    case R.id.rbcumplesi:
+                                        plataDocente.perfilmateria = 1;
+                                        break;
+                                    case R.id.rbcumpleno:
+                                        plataDocente.perfilmateria = 0;
+                                        break;
+                                }
+                                Log.w("PLANTA DOCENTE", String.valueOf(plataDocente.perfilmateria));
+
+                            }
+                        });
+
+                        RG_Inves.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                            @Override
+                            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                                switch (checkedId) {
+                                    case R.id.rbinvesi:
+                                        txtanoingSi.setEnabled(true);
+                                        plataDocente.SNI1 = 1;
+                                        DisableRadioGroup(RG_Nivel, true);
+                                        break;
+                                    case R.id.rbinveno:
+                                        txtanoingSi.setEnabled(false);
+                                        plataDocente.SNI1 = 0;
+                                        DisableRadioGroup(RG_Nivel, false);
+                                        break;
+
+                                }
+                                Log.w("PLANTA DOCENTE", String.valueOf(plataDocente.SNI1));
+
+                            }
+                        });
+
+                        RG_SSIT.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                            @Override
+                            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                                switch (checkedId)
+                                {
+                                    case R.id.rbssSI:
+                                        DisableRadioGroup(RGB_NivelISS, true);
+                                        txtanoInSSI.setEnabled(true);
+                                        break;
+                                    case R.id.rbSSNo:
+                                        DisableRadioGroup(RGB_NivelISS, false);
+                                            txtanoInSSI.setEnabled(false);
+                                        break;
+                                }
+                            }
+                        });
+                        //aki akaba Planta dosente /// ES PLANTA DOCENTE WEY >:V no dosente----------------------------------------------------------------------
+
+                        //PARTE PREGUNTAS AL DOCENTE------------------------------------------------------------------------------------------------------------------
+                        rbfuera.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                            @Override
+                            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                                switch (checkedId) {
+                                    case R.id.sifuera:// REGULAR
+                                        txtCantidadasistencia.setEnabled(true);
+                                        txtCantidadasistencia.setText("");
+                                        PreguntasDoc.listaasis1 = 1;
+                                        break;
+                                    case R.id.nofuera: //buena obvio
+                                        txtCantidadasistencia.setEnabled(false);
+                                        txtCantidadasistencia.setText("0");
+                                        PreguntasDoc.listaasis1 = 0;
+                                        break;
+
+                                }
+                                Log.w("Preguntas DOCENTE", String.valueOf(PreguntasDoc.listaasis1));
+
+                            }
+
+                        });
+                        rbidioma.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                            @Override
+                            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                                switch (checkedId) {
+                                    case R.id.siidioma:// REGULAR
+                                        txtCantidadidioma.setEnabled(true);
+                                        txtCantidadidioma.setText("");
+                                        PreguntasDoc.idioma1 = 1;
+                                        break;
+                                    case R.id.noidioma: //buena obvio
+                                        txtCantidadidioma.setEnabled(false);
+                                        txtCantidadidioma.setText("0");
+                                        PreguntasDoc.idioma1 = 0;
+                                        break;
+
+                                }
+                                Log.w("Preguntas DOCENTE", String.valueOf(PreguntasDoc.idioma1));
+
+                            }
+                        });
+
+                        rbdiscapacitados.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                            @Override
+                            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                                switch (checkedId) {
+                                    case R.id.sidiscapacitados:// REGULAR
+                                        txtCantidaddiscapacitados.setEnabled(true);
+                                        txtCantidaddiscapacitados.setText("");
+                                        PreguntasDoc.discapacidad1 = 1;
+                                        break;
+                                    case R.id.nodiscapacitados: //buena obvio
+                                        txtCantidaddiscapacitados.setEnabled(false);
+                                        txtCantidaddiscapacitados.setText("0");
+                                        PreguntasDoc.discapacidad1 = 0;
+                                        break;
+
+                                }
+                                Log.w("Preguntas DOCENTE", String.valueOf(PreguntasDoc.discapacidad1));
+
+
+                            }
+                        });
+                        rbindigenas.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                            @Override
+                            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                                switch (checkedId) {
+                                    case R.id.siindigena:// REGULAR
+                                        txtCantidadindigena.setEnabled(true);
+                                        txtCantidadindigena.setText("");
+                                        PreguntasDoc.indigena1 = 1;
+                                        break;
+                                    case R.id.noindigena: //buena obvio
+                                        txtCantidadindigena.setEnabled(false);
+                                        txtCantidadindigena.setText("0");
+                                        PreguntasDoc.indigena1 = 0;
+                                        break;
+
+                                }
+                                Log.w("Preguntas DOCENTE", String.valueOf(PreguntasDoc.indigena1));
+
+                            }
+
+                        });
+                        this.RGProgA.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                                if (checkedId == R.id.doctorado) {
+                                    Infraestructura.this.PreguntasDoc.proacademico = 4;
+                                } else if (checkedId == R.id.licenciatura) {
+                                    Infraestructura.this.PreguntasDoc.proacademico = 2;
+                                } else if (checkedId == R.id.maestria) {
+                                    Infraestructura.this.PreguntasDoc.proacademico = 3;
+                                } else if (checkedId == R.id.tsu) {
+                                    Infraestructura.this.PreguntasDoc.proacademico = 1;
+                                }
+                                Log.w("Preguntas DOCENTE", String.valueOf(Infraestructura.this.PreguntasDoc.proacademico));
+                            }
+                        });
+                        RGAsisA.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                                if (checkedId == R.id.noasistencia) {
+                                    Infraestructura.this.PreguntasDoc.asisprofesor = 0;
+                                } else if (checkedId == R.id.siasistencia) {
+                                    Infraestructura.this.PreguntasDoc.asisprofesor = 1;
+                                }
+                                Log.w("Preguntas DOCENTE", String.valueOf(Infraestructura.this.PreguntasDoc.asisprofesor));
+                            }
+                        });
+                        this.RG_ccdnt.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                                if (checkedId == R.id.RG_ccdntno) {
+                                    Infraestructura.this.PreguntasDoc.ccdht = 0;
+                                } else if (checkedId == R.id.rbccdntsi) {
+                                    Infraestructura.this.PreguntasDoc.ccdht = 1;
+                                }
+                                Log.w("Preguntas DOCENTE", String.valueOf(Infraestructura.this.PreguntasDoc.ccdht));
+                            }
+                        });
+                        this.RG_ccdhp.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                                switch (checkedId) {
+                                    case R.id.rbccdhpno:
+                                        Infraestructura.this.PreguntasDoc.ccdhp = 0;
+                                        break;
+                                    case R.id.rbccdhpsi:
+                                        Infraestructura.this.PreguntasDoc.ccdhp = 1;
+                                        break;
+                                    default:
+                                        break;
+                                }
+                                Log.w("Preguntas DOCENTE", String.valueOf(Infraestructura.this.PreguntasDoc.ccdhp));
+                            }
+                        });
+                        this.RG_Evaluar.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                                switch (checkedId) {
+                                    case R.id.rbaevano:
+                                        Infraestructura.this.PreguntasDoc.evaluar = 0;
+                                        break;
+                                    case R.id.rbaevasi:
+                                        Infraestructura.this.PreguntasDoc.evaluar = 1;
+                                        break;
+                                    default:
+                                        break;
+                                }
+                                Log.w("Preguntas DOCENTE", String.valueOf(Infraestructura.this.PreguntasDoc.evaluar));
+                            }
+                        });
+                        this.RG_EvaluarM.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                                if (checkedId == R.id.noreglamateria) {
+                                    Infraestructura.this.PreguntasDoc.reglamateria = 0;
+                                } else if (checkedId == R.id.sireglamateria) {
+                                    Infraestructura.this.PreguntasDoc.reglamateria = 1;
+                                }
+                                Log.w("Preguntas DOCENTE", String.valueOf(Infraestructura.this.PreguntasDoc.reglamateria));
+                            }
+                        });
+                        this.RG_Reglamento.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                                if (checkedId == R.id.noreglaescuela) {
+                                    Infraestructura.this.PreguntasDoc.reglamento = 0;
+                                } else if (checkedId == R.id.sireglaescuela) {
+                                    Infraestructura.this.PreguntasDoc.reglamento = 1;
+                                }
+                                Log.w("Preguntas DOCENTE", String.valueOf(Infraestructura.this.PreguntasDoc.indigena1));
+                            }
+                        });
+ cbRVOE1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b) {
+                    txtRVOE2.setEnabled(true);
+                    txtRVOE2.setText("");
+                } else {
+                    txtRVOE2.setEnabled(false);
+                    txtRVOE2.setText("0");
+                }
+                controlEscolar.RVOE1 = ConverBooleanInt(b);//DA IGUAL B VALDRA LO QUE SALG
+                Log.w("Control Escolar", String.valueOf(controlEscolar.RVOE1));
+            }
+        });
+        cbRVOEfederal1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b) {
+                    txtRVOEfederal2.setEnabled(true);
+                    txtRVOEfederal2.setText("");
+                } else {
+                    txtRVOEfederal2.setEnabled(false);
+                    txtRVOEfederal2.setText("0");
+                }
+                controlEscolar.RVOEfederal1 = ConverBooleanInt(b);//DA IGUAL B VALDRA LO QUE SALG
+                Log.w("Control Escolar", String.valueOf(controlEscolar.RVOEfederal1));
+            }
+        });
+
+            public void createPdf(String filePath) throws DocumentException, IOException {
+
+                SimpleDateFormat hora = new SimpleDateFormat("HH:mm"), fecha = new SimpleDateFormat("dd/MM/yyyy");
+                URL sqlScriptUrl = UpdateActivity.class
+                        .getClassLoader().getResource("sepyclogo.jpg");
+                Date date = new Date();
+
+                String file = "<!DOCTYPE html><html lang='es'><style>" +Permissions.readFile(R.raw.estilo, UpdateActivity.this)  + "</style><body>";
+                file += "<div id=\"container\"><div id=\"left\"></div><div id=\"center\"><p class=\"parrafo\" style=\"text-align: center; font-size: 8pt; margin-left: 190px;\">Tel (667) 846 42 00 <br /> www.sepyc.gob.mx</p></div><div id=\"right\"><p class=\"parrafo\" style=\"text-align: left;font-size: 8pt;\">Blvd. Pedro Infante Cruz 2200 Pte. <br /> Col. Recursos Hidraulicos, <br /> Culiacan, Sinaloa, Mexico C.P. 80100</p></div></div>";
+                //file += "<table class='tabletop'><tr><td style=\"border: none; width: 30%\"></td><td style=\"border: none; width: 40\"><p class=\"parrafo\" style=\"text-align: center; font-size: 8pt\">Tel (667) 846 42 00 <br /> www.sepyc.gob.mx</p></td><td style=\"border: none;\"><p class=\"parrafo\" style=\"text-align: left;font-size: 8pt;\">Blvd. Pedro Infante Cruz 2200 Pte. <br /> Col. Recursos Hidraulicos, <br /> Culiacan, Sinaloa, Mexico C.P. 80100</p></td></tr></table>";
+                file += "<h4 class='nomsp'>Acta de Visita de Supervision Ordinaria <br />de Instituciones de Educacion Media Superior y Superior</h4>";
+                //file += "<h4 class='nomsp3'>de Instituciones de Educacion Media Superior y Superior</h4>";
+                file += "    <p class=\"parrafo\" style=\"font-weight: bold; margin-right: 150px;\">M.C Francisco Javier Real Angulo <br /> Univerisidad Politecnica de Sinaloa<br /> Denominacion</p>";
+                file += "<p class=\"parrafo\">Con fundamento en lo dispuesto por los artículos 57 fracción v y 58 de la ley " +
+                        "General de Educación y artículos 22 fracción v de la ley de Educación para el Estado de Sinaloa y los relativos 70, 71 y 73 del Acuerdo Secretarial</p>";
+                file += "<p class=\"parrafo\">El suscrito Nombre Supervisor, Supervisor de Educación Media Superior y Superior en la zona " +
+                        "(zona) en el estado, adscrito a la Dirección de Educación Media Superior y Superior, de la Subsecretaria de Educación Media Superior y Superior, de la Secretaria de Educación Publica y Cultura del Estado y quien en este acto de identifica con credencial expedido por la Dirección de Recursos Humanos de esta Secretaria, a realizar la visitar (o/e) en los términos que señalan los citados artículos, misma que se desarrolla en la Ciudad de (Nombre Cuidad), siendo a la horas del día Fecha.</p>";
+                file += "<p class=\"parrafo\">Me constituí fiscalmente a la institución (nombreInst) después que fue debidamente entregado a nuestra visita al (nombreRepresentanteLega), Representante Legal de la presente institución, ubicada en (domicilio)…………</p>";
+                file += "<p class=\"parrafo\">Depues de quedar debidamente acreditado para la visita, se superviso y resulto lo siguiente:</p>" +
+                        "<p class=\"parrafo\">a) Tiene registrado en el Sistema Integral de Reconocimiento de Validez Oficial de Estudios(SIRSIN) los siguientes:</p>";
+                file += "<div><div style=\"margin-left:50px\"><table class=\"tablefir\"><thead><tr><th>No. RVOE</th><th>Programa de Estudios</th><th>Ultima Actualizacion</th></tr></thead><tbody>";
+                if(rvoeList.size() <= 0)
+                {
+                    file += "<tr><td>No se encontraron revoces ligados a esta institucion</td></tr>";
+                }
+                else
+                {
+                    for(int x = 0; x < rvoeList.size(); x++)
+                    {
+                        file += "<tr><td>"+rvoeList.get(x).getClave_rvoe()+"</td><td>"+rvoeList.get(x).getNombrecarrera()+"</td><td>No disponible</td></tr>";
+                    }
+                }
+
+                file += "</tbody></table></div></div>";
+
+                file += "<p class=\"parrafo\">b) Observaciones que instruyen su seguimiento</p>";
+                file += "<table class=\"tablefir\"><thead><tr><th>Comentarios</th></tr></thead><tbody><tr><td>Nose weno si se pero no te wua decir pendejo ajajajajajjajaaj, consegue tu pnshe pdf pinshe huevon puto MANCO :v</td></tr></tbody></table>";
+                file += "<p class=\"parrafo\">Habiéndose concluido la visita (ordinaria/extraordinaria) se le concede el uso de la voz al particular para que manifieste en este acto lo que a su derecho convenga," +
+                        " manifestando , una ve hecho lo anterior y habiéndose desahogado todos y cada uno de los puntos señalados se procede a dar por concluida la presente supervisión contenida en el" +
+                        " (folio), siendo las " + hora.format(date) + " del día " + fecha.format(date) + ", haciéndolo constar suscribiéndola al margen y al calce porque ella intervinieron.</p>";
+
+                file += "<table class=\"tablefirma\" style=\"border: white 0px\"><thead><tr ><th style=\"border: 0px solid white;\">SUPERVISOR OFICICIAL</th><th style=\"border: 0px solid white;\">REPRESENTANTE LEGAL</th></tr></thead><tbody>";
+                file += "<tr><td style=\"border: 0px solid white;\"><br /><br /><br /><br /><br />I.M. Carlos Santiago Sanchez Zavala</td><td style=\"border: 0px solid white;\"><br /><br /><br /><br /><br />M.C Francisco Javier Real Angulo</td></tr>";
+                file += "</tbody></table>";
+                file += "</body></html>";
+                Document document = new Document(PageSize.LEGAL, 80, 80, 40, 40);
+
+                PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream(filePath));
+                document.open();
+                InputStream inStream = getResources().openRawResource(R.raw.sepyclogo);
+                byte[] image = Permissions.convertStreamToByteArray(inStream);
+                Image img = Image.getInstance(image);
+                img.setAbsolutePosition(30, document.getPageSize().getHeight() - 100);
+                document.add(img);
+                XMLWorkerHelper worker = XMLWorkerHelper.getInstance();
+                worker.parseXHtml(writer, document, new StringReader(file));
+                document.addCreator("KrozGamer");
+                document.addTitle("Supervision");
+                document.close();
+                System.out.println(file);
+            }
+
+             String path = Environment.getExternalStorageDirectory().toString()+"/Music";
+                    Log.d("Files", "Path: " + path);
+                    File directory = new File(path);
+                    File[] files = directory.listFiles();
+                    Log.d("Files", "Size: "+ files.length);
+                    for (int i = 0; i < files.length; i++)
+                    {
+                        Log.d("Files", "FileName:" + files[i].getName());
+                    }
+
+
+                    public void createPdf(String file) throws IOException, DocumentException {
+                            Config config = new Config(getApplicationContext());
+                            String html = "<!DOCTYPE html><html lang='en'> " +
+                                    "<style>" + getResources().getString(R.string.stylesPdf) + "</style>" +
+                                    "<body>" + "<h4>ACTA DE VISITA DE SUPERVISIÓN </h4><h4 style=\"margin-top: -15px;\">NÚMERO: SEPyC/ZC001/17</h4>" + "<p class='parrafo'>" + getResources().getString(R.string.documet) + "</p>" +
+                                    "<center><table class=\"parent tablefir\"><tr class=\"p1\"><th><p class=\"nomsp\">SUPERVISOR OFICIAL</p><p class=\"nomsp nomsp2\" >";
+                            html += config.getNombre().toUpperCase() + "</p></th>";
+                            html += "<th><p class=\"nomsp\">DIRECTOR(A)</p><p class=\"nomsp nomsp2\">"+representantes.get(0).getNombre().toUpperCase()+"</p></th></tr>";
+                            html += "<tr class=\"p1\"><th><p class=\"nomsp\">TESTIGO</p><p class=\"nomsp nomsp2\">"+representantes.get(1).getNombre().toUpperCase()+"</p></th>";
+                            html +="<th><p class=\"nomsp\">TESTIGO</p><p class=\"nomsp nomsp2\">"+representantes.get(0).getNombre().toUpperCase()+"</p></th></tr></table></center>";
+                            html += "</body></html>";
+                            Image img;
+                            int indentation = 0;
+                            int changephoto = 1;
+                            float ypohoto = 600, scaler;
+
+                            Document document = new Document();
+                            PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream(Environment.getExternalStorageDirectory() + "/pdf1.pdf"));
+                            document.open();
+                            XMLWorkerHelper worker = XMLWorkerHelper.getInstance();
+                            worker.parseXHtml(writer, document, new StringReader(file));
+                            document.newPage();
+                            for (int x = 0; x < photoList.size(); x++) {
+
+                                img = Image.getInstance(Environment.getExternalStorageDirectory() + Permissions.LSD2 + "/" + photoList.get(x));
+                                scaler = ((document.getPageSize().getWidth() - document.leftMargin()
+                                        - document.rightMargin() - indentation) / img.getWidth()) * 100;
+                                img.scalePercent(scaler / 2);
+                                if (changephoto == 1) {
+                                    img.setAbsolutePosition(40, ypohoto);
+                                    changephoto = 0;
+                                } else {
+                                    img.setAbsolutePosition(55 + img.getScaledWidth(), ypohoto);
+                                    changephoto = 1;
+                                    ypohoto = ypohoto - (img.getScaledHeight() + 35);
+
+                                }
+                                document.add(img);
+                            }
+                            document.close();
+                            Log.w("Archivo", "listo");
+                            progress.hide();
+
+                        }
+
+                        @Override //STE METODO DETECTA CUANDO LA ACTIVIDAD QUE SE ABRIO RENCIENTE REVUELDA DATOS
+                            public void onActivityResult(int requestCode, int resultCode, Intent data) {
+                                if (data != null) {
+                                    String[] files = data.getStringArrayExtra(Permissions.datafiles);
+                                    for(int s = 0; s < files.length; s++)
+                                    {
+                                        photoList.add(s, files[s]);
+                                    }
+                                } else {
+                                    Log.w("NO", "DATA");
+                                }
+
+
+                            }
+
+                            btnanoInSSI.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View view) {
+                                            final DatePickerDialog datetime = new DatePickerDialog(Infraestructura.this, date, myCalendar.get(Calendar.YEAR),
+                                                    myCalendar.get(Calendar.MONTH), myCalendar.get(Calendar.DAY_OF_MONTH));
+
+                                            datetime.setButton(DialogInterface.BUTTON_POSITIVE, "OK", new DialogInterface.OnClickListener() {
+                                                @Override
+                                                public void onClick(DialogInterface dialogInterface, int i) {
+                                                    if (i == DialogInterface.BUTTON_POSITIVE) {
+                                                        DatePicker datePicker = datetime.getDatePicker();
+                                                        date.onDateSet(datePicker, datePicker.getYear(), datePicker.getMonth(), datePicker.getDayOfMonth());
+                                                        txtanoInSSI.setText(myCalendar.get(Calendar.YEAR) + "/" + myCalendar.get(Calendar.MONTH) + "/" + myCalendar.get(Calendar.DAY_OF_MONTH));
+                                                    }
+                                                }
+                                            });
+                                            datetime.setCancelable(false);
+                                            datetime.show();
+
+
+                                        }
+                                    });
+
+                                    final DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
+                                            @Override
+                                            public void onDateSet(DatePicker view, int year, int monthOfYear,
+                                                                  int dayOfMonth) {
+                                                // TODO Auto-generated method stub
+                                                myCalendar.set(Calendar.YEAR, year);
+                                                myCalendar.set(Calendar.MONTH, monthOfYear);
+                                                myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                                            }
+
+
+                                        };
+
+                                        Calendar myCalendar = Calendar.getInstance();
+
+                                            //PendingIntent resultPendingIntent;
+                                                    /*
+                                                    if (URL.equals(action)) {
+                                                        Intent notificationIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(destination));
+
+                                                        resultPendingIntent = PendingIntent.getActivity(mContext, 0, notificationIntent, 0);
+                                                    } else if (ACTIVITY.equals(action) && activityMap.containsKey(destination)) {
+                                                        resultIntent = new Intent(mContext, activityMap.get(destination));
+
+                                                        resultPendingIntent =
+                                                                PendingIntent.getActivity(
+                                                                        mContext,
+                                                                        0,
+                                                                        resultIntent,
+                                                                        PendingIntent.FLAG_CANCEL_CURRENT
+                                                                );
+                                                    } else {
+                                                        resultIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                                                        resultPendingIntent =
+                                                                PendingIntent.getActivity(
+                                                                        mContext,
+                                                                        0,
+                                                                        resultIntent,
+                                                                        PendingIntent.FLAG_CANCEL_CURRENT
+                                                                );
+                                                    }
+                                                    */
+
+
+    /*
+    class AdapterInstASuper extends ArrayAdapter<ListInstituciones> {
+        private Context context;
+        private ArrayList<ListInstituciones> objects;
+
+        public AdapterInstASuper(Context contexto, ArrayList<ListInstituciones> objects) {
+            super(contexto, R.layout.instituciones_listlayout, objects);
+            this.context = contexto;
+            this.objects = objects;
+        }
+
+
+        @SuppressLint("SetTextI18n")
+        public View getView(final int position, View convertview, ViewGroup viewGroup) {
+            LayoutInflater layoutInflater = LayoutInflater.from(context);
+            View view = layoutInflater.inflate(R.layout.instituciones_listlayout, null);
+            final TextView lbescuela = view.findViewById(R.id.lbescuela);
+            final LinearLayout btnLisist = view.findViewById(R.id.btnList);
+            final TextView lbfecha = view.findViewById(R.id.lbfecha), txtstatus = view.findViewById(R.id.txtstatus);
+            final TextView lbzona = view.findViewById(R.id.lbzona);
+            final Calendar calendar = Calendar.getInstance();
+            if (objects.get(position).getStatus() == 1) {
+                if (objects.get(position).getFecha().getMonth() == calendar.get(Calendar.MONTH) + 1 && objects.get(position).getFecha().getYear() == calendar.get(Calendar.YEAR) &&
+                        objects.get(position).getFecha().getDay() == calendar.get(Calendar.DAY_OF_MONTH)) {
+                    lbfecha.setText("Programada para HOY");
+                    txtstatus.setText("PENDIENTE");
+                } else if (objects.get(position).getFecha().getMonth() < calendar.get(Calendar.MONTH) + 1 || objects.get(position).getFecha().getYear() < calendar.get(Calendar.YEAR) ||
+                        objects.get(position).getFecha().getDay() < calendar.get(Calendar.DAY_OF_MONTH)) {
+                    lbfecha.setText("Programada para el " + objects.get(position).getFecha().returnFecha());
+                    txtstatus.setText("ATRASADA");
+                } else {
+                    lbfecha.setText("Programada para el " + objects.get(position).getFecha().returnFecha());
+                    txtstatus.setText("PENDIENTE");
+                }
+
+            } else if (objects.get(position).getStatus() == 0 || objects.get(position).getStatus() == 2) {
+                if(objects.get(position).getStatus() == 2)
+                {
+                    txtstatus.setText("COMPLETADA");
+                }
+                else
+                {
+                    txtstatus.setText("COMPLETADA - PENDIENTE DE SUBIR");
+                }
+
+            }
+            //2000-10-05
+            lbzona.setText("Zona " + objects.get(position).getZona());
+            lbescuela.setText(objects.get(position).getNombre());
+            btnLisist.setBackgroundColor(objects.get(position).getColor());
+            btnLisist.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    if (objects.get(position).getStatus() == 2 || objects.get(position).getStatus() == 0) {
+                        Toast.makeText(getApplicationContext(), "Supervision Completada", Toast.LENGTH_SHORT).show();
+                    } else if (objects.get(position).getFecha().getMonth() >= (calendar.get(Calendar.MONTH) + 1) && objects.get(position).getFecha().getYear() >= calendar.get(Calendar.YEAR) &&
+                            objects.get(position).getFecha().getDay() > calendar.get(Calendar.DAY_OF_MONTH)) {
+                        Permissions.alertDialog("Esta supervision no esta programada para el dia de hoy", "Error", MenuActivity.this);
+                    } else {
+                        Permissions.alertDialogDesision(objects.get(position).getInformacion(),
+                                getResources().getString(R.string.infoinstitucion),
+                                MenuActivity.this,
+                                new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        Infraestructura.SupervisionInfo supervision = new Infraestructura.SupervisionInfo();
+                                        Intent intent = new Intent(MenuActivity.this, Infraestructura.class);
+                                        supervision.setIdInstitucion(objects.get(position).getIdIntitucion());
+                                        supervision.setIdSupervision(objects.get(position).getId());
+                                        supervision.setNombreInstitucion(objects.get(position).getNombre());
+                                        Log.w("NO", supervision.getNombreInstitucion());
+                                        intent.putExtra("supervision", supervision);
+                                        startActivity(intent);
+                                    }
+                                });
+                    }
+
+                }
+            });
+            return view;
+        }
+
+
+    }
+
+
+*/

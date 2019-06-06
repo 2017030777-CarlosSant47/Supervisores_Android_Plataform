@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:orientation="vertical"
+    android:id="@+id/linRevision"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/alumnosfuerasis"
+        android:textColor="#000"
+        />
+    <RadioGroup
+        android:id="@+id/rbbfuera"
+        android:layout_width="wrap_content"
+        android:layout_height="55dp">
+        <RadioButton
+            android:id="@+id/sifuera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Si" />
+        <RadioButton
+            android:id="@+id/nofuera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="No" />
+    </RadioGroup>
+    <EditText
+        android:id="@+id/txtcantidadalumnosfuera"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:maxLength="5"
+        android:hint="¿Cuántos?"
+        android:inputType="number" />
+
+
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/alumnosdisca"
+        android:textColor="#000"
+        />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:id="@+id/rbdiscapacitados"
+        android:layout_height="55dp">
+        <RadioButton
+            android:id="@+id/sidiscapacitados"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Si" />
+        <RadioButton
+            android:id="@+id/nodiscapacitados"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="No" />
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/cantidaddiscapacitados"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="¿Cuántos?"
+        android:inputType="number" />
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/alumnosbecados"
+        android:textColor="#000"
+        />
+
+    <Spinner
+        android:id="@+id/cmbBecas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawSelectorOnTop="true"
+        android:entries="@array/cmbBecas"
+        >
+    </Spinner>
+    <!--
+    <EditText
+        android:id="@+id/cantidadbecados"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="¿Cuántos?"
+        android:inputType="number" />
+        -->
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/alumnosindigenas"
+        android:textColor="#000"
+        />
+    <RadioGroup
+        android:id="@+id/rbindigenas"
+        android:layout_width="wrap_content"
+        android:layout_height="55dp">
+        <RadioButton
+            android:id="@+id/siindigena"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Si" />
+        <RadioButton
+            android:id="@+id/noindigena"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="No" />
+    </RadioGroup>
+    <EditText
+        android:id="@+id/cantidadindigena"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="¿Cuántos?"
+        android:maxLength="5"
+
+        android:inputType="number" />
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/alumnosidioma"
+        android:textColor="#000"
+        />
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:id="@+id/rbidioma"
+        android:layout_height="55dp">
+        <RadioButton
+            android:id="@+id/siidioma"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Si" />
+        <RadioButton
+            android:id="@+id/noidioma"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="No" />
+    </RadioGroup>
+    <EditText
+        android:id="@+id/cantidadidioma"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:maxLength="5"
+
+        android:hint="¿Cuántos?"
+        android:inputType="number" />
+    <!--Idiomasa kitados-->
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Ingles"
+        android:hint="Ingles"
+        android:visibility="gone"
+        />
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Chino"
+        android:hint="Chino Mandarin"
+        android:visibility="gone"
+        />
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Frances"
+        android:hint="Frances"
+        android:visibility="gone"
+        />
+    <EditText
+        android:id="@+id/OtrosID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Otros"
+        android:inputType="text"
+        android:visibility="gone"
+        />
+    <!--termina-->
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/programamaaca"
+
+        android:textColor="#000"
+        />
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:id="@+id/RGProgA"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+        <RadioButton
+            android:id="@+id/tsu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/tecsu" />
+        <RadioButton
+            android:id="@+id/licenciatura"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/lic" />
+        <RadioButton
+            android:id="@+id/maestria"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/mat" />
+
+        <RadioButton
+            android:id="@+id/doctorado"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/doc" />
+
+    </RadioGroup>
+
+    <!--cambiar dependiendo-->
+    <EditText
+        android:id="@+id/semestre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Semestre"
+        android:maxLength="3"
+
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/nmsemestre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:maxLength="3"
+
+        android:hint="@string/nmsemestre"
+        android:inputType="number" />
+
+
+    <EditText
+        android:id="@+id/asignatura"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:visibility="gone"
+        android:hint="@string/asingnatura"
+        android:inputType="textPersonName" />
+    <View
+        android:background="#515050"
+        android:layout_width = "fill_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:layout_centerVertical ="true"
+        android:layout_alignParentTop="true"/>
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="17dp"
+        android:visibility="gone"
+        android:text="@string/alumno"
+        android:textColor="#000"
+        />
+    <EditText
+        android:id="@+id/grupo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/grupo"
+        android:maxLength="3"
+
+        android:inputType="textPersonName" />
+    <EditText
+        android:id="@+id/grado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/Grado"
+        android:inputType="number" />
+
+
+    <View
+        android:background="#515050"
+        android:layout_width = "fill_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:layout_centerVertical ="true"
+        android:layout_alignParentTop="true"/>
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/asismaestro"
+        android:textColor="#000"
+        />
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cmbAsistencias"
+        android:drawSelectorOnTop="true"
+        android:entries="@array/cmbAsisten"
+        >
+
+    </Spinner>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/ccdnt"
+        android:textColor="#000"
+        />
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cmbCarDescrip"
+        android:drawSelectorOnTop="true"
+        android:entries="@array/cmbCartDescrip"
+        >
+
+    </Spinner>
+
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/evaluar"
+        android:textColor="#000"
+        />
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cmbEvaluar"
+        android:drawSelectorOnTop="true"
+        android:entries="@array/cmbCartDescrip"
+        >
+
+    </Spinner>
+
+
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/mreglamentoi"
+        android:textColor="#000"
+        />
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cmbReglamento"
+        android:drawSelectorOnTop="true"
+        android:entries="@array/cmbCartDescrip"
+        >
+
+    </Spinner>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/MaesDiesc"
+        android:textColor="#000"
+        />
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cmbMaesDiscut"
+        android:drawSelectorOnTop="true"
+        android:entries="@array/cmbCartDescrip"
+        >
+
+    </Spinner>
+
+    <EditText
+        android:id="@+id/txtComentRev"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Comentarios"
+        android:inputType="textMultiLine"
+        />
+    <Button
+        android:id="@+id/btnver1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Guardar 1 de "
+        android:textColor="#fff"
+        android:background="@color/colorPrimary"
+        android:visibility="visible"
+        android:layout_marginBottom="80dp"
+        />
+</LinearLayout>

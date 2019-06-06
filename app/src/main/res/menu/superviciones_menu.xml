@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2018. Todos los derechos reservados
+  -->
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+        <item
+            android:id="@+id/btnActual"
+            android:checkable="true"
+            android:icon="@drawable/calendar"
+            android:title="Actual" />
+        <item
+            android:id="@+id/btnPendientes"
+            android:icon="@drawable/pediente"
+            android:title="Pendientes"
+            android:checkable="true"
+            />
+        <item
+            android:id="@+id/btnCompletadas"
+            android:icon="@drawable/complete"
+            android:title="Completadas"
+            android:checkable="true"
+            android:checked="true"
+            />
+
+
+
+</menu>

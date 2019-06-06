@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "461865301088",
+    "firebase_url": "https://supervisor-notifications.firebaseio.com",
+    "project_id": "supervisor-notifications",
+    "storage_bucket": "supervisor-notifications.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:461865301088:android:775ebd070cd7080c",
+        "android_client_info": {
+          "package_name": "com.carlossant47.supervision"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "461865301088-s90uof64067qt4vqeogq10idu8q5j4h5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.carlossant47.supervision",
+            "certificate_hash": "481375eb7c1fa13f74741d83c2e1eb18ab4e1731"
+          }
+        },
+        {
+          "client_id": "461865301088-pn3tdhqa368p2f44io904rv8egm7891s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDoaUrnw-9y2dWTxWDbHp8a6ZcmqXTZh0o"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "461865301088-pn3tdhqa368p2f44io904rv8egm7891s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
